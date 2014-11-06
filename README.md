@@ -10,16 +10,14 @@ Integrate this type of test suite into your continuous delivery pipeline and tri
 * Visual Studio 2013 
 * [Fiddler](http://www.telerik.com/fiddler)
 
-###Understand the internals:
-I tried best to add all required comments inside the project. But will try to explain each every single components here -
-
-We are going to write tests for [this](https://github.com/pritamkarmakar/REST-API) simple REST API. Please open this REST API in Visual Studio and run it from there. This REST API has following methods -
+###What we are going to test:
+We are going to test [this](https://github.com/pritamkarmakar/REST-API) REST API. Please open this REST API in Visual Studio and run it from there. This REST API has following methods -
 * Get all employee list (GET) - ../api/employee
 * Get details of a specific employee (GET) - ../api/employee/{id}
 * Add a new employee (POST) - ../api/employee
 * Delete an existing employee (DELETE) - ../api/Employee/{id}
 
-So far I have just added only one test per method and not covering other aspects of the testing like invalid input, corner case, edge case etc. Please make sure when you will create your own test suite you are covering those scenarios.
+So far I have just added only one test per method and haven't covered other aspects of the testing like invalid input, corner case, edge case etc. Please make sure to cover those scenarios when you will create your own test suite.
 
 ###Mechanism to verify the API response:
 There are 2 different approaches of verifying a REST API response -
