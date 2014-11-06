@@ -22,8 +22,10 @@ So far I have just added only one test per method and haven't covered other aspe
 ###Mechanism to verify the API response:
 There are 2 different approaches of verifying a REST API response -
 
-1. **Using static JSON/XML content** - if we know our API going to return fixed response for a particular given input then we can validate the response using a pre existing JSON/XML. We have to call that API from Fiddler and have to grab the response. Once we have it copy that content into a text file (if the response is in JSON format) or in XML format. During the test we will verify API response matches the static content that we kept earlier.
-2. **Deserialize the JSON to class** - in this approach we will convert the API JSON response to C# class object. And from this object will read the required parameters. This is useful when your API response changing constantly and you want to make sure after doing a POST/DELETE operation changes are there.
+1. **Using static JSON/XML content** - if we know our API going to return fixed response for a particular given input then we can validate the response using a pre existing JSON/XML. 
+
+    To get the API response, we have to call the API from Fiddler and have to grab the response. Once we have it copy that content into a text file (if the response is in JSON format) or in XML format. During the test we will verify API response matches the static content that we kept earlier.
+2. **Deserialize the JSON to class** - in this approach we will convert the API JSON response to C# class object. And from this object we will read the required properties. This is useful when your API response changing constantly and you want to make sure after doing a POST/PUT/DELETE operation changes are there.
 
 ###Components that we have in this test project:
 * APITests.cs - this class contains all the test methods
