@@ -22,7 +22,7 @@ We are going to write tests for [this](https://github.com/pritamkarmakar/REST-AP
 So far I have just added only one test per method and not covering other aspects of the testing like invalid input, corner case, edge case etc. Please make sure when you will create your own test suite you are covering those scenarios.
 
 ###Mechanism to verify the API response:
-Before moving to discuss about the test I want to explain 2 different approach of verifying a REST API response.
+There are 2 different approaches of verifying a REST API response -
 
 1. **Using static JSON/XML content** - if we know our API going to return fixed response for a particular given input then we can validate the response using a pre existing JSON/XML. We have to call that API from Fiddler and have to grab the response. Once we have it copy that content into a text file (if the response is in JSON format) or in XML format. During the test we will verify API response matches the static content that we kept earlier.
 2. **Deserialize the JSON to class** - in this approach we will convert the API JSON response to C# class object. And from this object will read the required parameters. This is useful when your API response changing constantly and you want to make sure after doing a POST/DELETE operation changes are there.
