@@ -45,7 +45,7 @@ namespace APIAutomation.Helper
         /// <param name="url">API URL</param>
         /// <param name="content">HttpContent httpContent</param>
         /// <returns>response after the POST request</returns>
-        public static string HttpPostResponse(string url, HttpContent content)
+        public string HttpPostResponse(string url, HttpContent content)
         {
             HttpClient client = new HttpClient();
             HttpResponseMessage apiVersionResp = null;
@@ -70,7 +70,7 @@ namespace APIAutomation.Helper
         /// <param name="url">API URL</param>
         /// <param name="content">HttpContent httpContent</param>
         /// <returns>response after the PUT request</returns>
-        public static string HttpPutResponse(string url, HttpContent content)
+        public string HttpPutResponse(string url, HttpContent content)
         {
             HttpClient client = new HttpClient();
             HttpResponseMessage apiVersionResp = null;
@@ -94,7 +94,7 @@ namespace APIAutomation.Helper
         /// </summary>
         /// <param name="url">API URL</param>
         /// <returns>response after the DELETE operation</returns>
-        public static string HttpDeleteResponse(string url)
+        public string HttpDeleteResponse(string url)
         {
             HttpClient client = new HttpClient();
             HttpResponseMessage apiVersionResp = null;
