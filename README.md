@@ -35,4 +35,4 @@ There are 2 different approaches of verifying a REST API response -
 * DataModels > DataModels.cs - if we are going to verify the API response using the 2nd approach 'Deserialize the JSON to class' then we need to create the class representation of the JSON response. There are plenty of online websites which can help us to get the class representation of a JSON content. My favorite is http://json2csharp.com/. Paste your JSON in the text field of this website and it will give you the class representation. Make sure to give a good name of the class and put that into DataModels.cs file.
 
 
-That's it, now you can open this project and see the tests. I tried my best to add as much comments possible in each tests, but if anything not clear feel free to drop me email (contact information in my profile). Hope this will be helpful.
+That's it, now you can open this project and see the tests. I tried my best to add as much comments possible in each test, but if anything not clear feel free to drop me email (contact information in my profile). Hope this will be helpful.
