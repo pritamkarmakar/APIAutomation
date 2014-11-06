@@ -11,7 +11,7 @@ Integrate this type of test suite into your continuous delivery pipeline and tri
 * [Fiddler](http://www.telerik.com/fiddler)
 
 ###What we are going to test:
-We are going to test [this](https://github.com/pritamkarmakar/REST-API) REST API. Please open this REST API in Visual Studio and run it from there. This REST API has following methods -
+We are going to test [this](https://github.com/pritamkarmakar/REST-API) REST API. The REST API has following methods -
 * Get all employee list (GET) - ../api/employee
 * Get details of a specific employee (GET) - ../api/employee/{id}
 * Add a new employee (POST) - ../api/employee
