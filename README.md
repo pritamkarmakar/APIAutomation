@@ -1,7 +1,7 @@
 APIAutomation
 =============
 
-This is a test suite written using C#, to verify the functionalities of a RESTful web service. If you are familiar in Java you can create similar project using Java as well. 
+This is a test suite to verify the functionalities of a RESTful web service.
 
 ###Where we can use this project:
 Integrate this type of test suite into your continuous delivery pipeline and trigger all your tests after every new build and make sure there is no regression and your REST APIs are working as before. 
