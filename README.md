@@ -1,4 +1,4 @@
-APIAutomation
+API Automation
 =============
 
 This is a test suite to verify the functionalities of a RESTful web service.
