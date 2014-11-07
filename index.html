@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Apiautomation : This is a test suite to verify the functionalities of a RESTful web service">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Apiautomation</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/pritamkarmakar/APIAutomation">View on GitHub</a>
+
+          <h1 id="project_title">Apiautomation</h1>
+          <h2 id="project_tagline">This is a test suite to verify the functionalities of a RESTful web service</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/pritamkarmakar/APIAutomation/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/pritamkarmakar/APIAutomation/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="api-automation" class="anchor" href="#api-automation" aria-hidden="true"><span class="octicon octicon-link"></span></a>API Automation</h1>
+
+<p>This is a test suite to verify the functionalities of a RESTful web service.</p>
+
+<h3>
+<a id="where-we-can-use-this-project" class="anchor" href="#where-we-can-use-this-project" aria-hidden="true"><span class="octicon octicon-link"></span></a>Where we can use this project:</h3>
+
+<p>Integrate this type of test suite into your continuous delivery pipeline and trigger all your tests after every new build and make sure there is no regression and your REST APIs are working as before. </p>
+
+<h3>
+<a id="tools-used" class="anchor" href="#tools-used" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tools used:</h3>
+
+<ul>
+<li>Visual Studio 2013 </li>
+<li><a href="http://www.telerik.com/fiddler">Fiddler</a></li>
+</ul>
+
+<h3>
+<a id="what-we-are-going-to-test" class="anchor" href="#what-we-are-going-to-test" aria-hidden="true"><span class="octicon octicon-link"></span></a>What we are going to test:</h3>
+
+<p>We are going to test <a href="https://github.com/pritamkarmakar/REST-API">this</a> REST API. The REST API has following methods -</p>
+
+<ul>
+<li>Get all employee list (GET) - ../api/employee</li>
+<li>Get details of a specific employee (GET) - ../api/employee/{id}</li>
+<li>Add a new employee (POST) - ../api/employee</li>
+<li>Delete an existing employee (DELETE) - ../api/Employee/{id}</li>
+</ul>
+
+<p>So far I have just added only one test per method and haven't covered other aspects of the testing like invalid input, corner case, edge case etc. Please make sure to cover those scenarios when you will create your own test suite.</p>
+
+<h3>
+<a id="mechanism-to-verify-the-api-response" class="anchor" href="#mechanism-to-verify-the-api-response" aria-hidden="true"><span class="octicon octicon-link"></span></a>Mechanism to verify the API response:</h3>
+
+<p>There are 2 different approaches of verifying a REST API response -</p>
+
+<ol>
+<li>
+<p><strong>Using static JSON/XML content</strong> - if we know our API going to return fixed response for a particular given input then we can validate the response using a pre existing JSON/XML. </p>
+
+<p>To get the API response, we have to call the API from Fiddler and have to grab the response. Once we have it copy that content into a text file (if the response is in JSON format) or in XML format. During the test we will verify API response matches the static content that we kept earlier.</p>
+</li>
+<li>
+<strong>Deserialize the JSON to a class object</strong> - in this approach we will convert the API JSON response to C# class object. And from this object we will read the required properties. This is useful when your API response changing constantly and you want to make sure after doing a POST/PUT/DELETE operation latest changes are there.</li>
+</ol>
+
+<h3>
+<a id="components-that-we-have-in-this-test-project" class="anchor" href="#components-that-we-have-in-this-test-project" aria-hidden="true"><span class="octicon octicon-link"></span></a>Components that we have in this test project:</h3>
+
+<ul>
+<li>APITests.cs - this class contains all the test methods</li>
+<li>TestData - this folder contains the stubbed API response, we will use this content if we take the 'Using static JSON/XML content' approach</li>
+<li>Helper &gt; CommonMethods.cs - this class has methods to make HTTP GET, POST, DELETE operations. We will reuse these methods across different tests</li>
+<li>Helper &gt; JsonComparer.cs - class to compare two JSON strings. This can remove the dynamic parts of a JSON string to make a comparison. For example - we want to verify whether REST API is returning correct details for a particular employee. This is a static response but inside that response we have some properties that contains dynamic values like a GUID or datetime. So we have to replace those properties with some fixed value so that we can make a final comparison with the stubbed data. This class can do that, for more details please check <a href="https://github.com/pritamkarmakar/JSONComparer">here</a>
+</li>
+<li>DataModels &gt; DataModels.cs - if we are going to verify the API response using the 2nd approach 'Deserialize the JSON to class' then we need to create the class representation of the JSON response. There are many online websites which can help us to get the class representation of a JSON content. My favorite is <a href="http://json2csharp.com/">http://json2csharp.com/</a>. Paste your JSON in the text field of this website and it will give you the class representation. Make sure to give a good name of the class and put that into DataModels.cs file.</li>
+</ul>
+
+<p>That's it, now you can open this project and see the tests. I tried my best to add as much comments possible in each test, but if anything not clear feel free to drop me email (contact information in my profile). Hope this will be helpful.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Apiautomation maintained by <a href="https://github.com/pritamkarmakar">pritamkarmakar</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
