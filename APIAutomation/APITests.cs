@@ -36,7 +36,7 @@ namespace APIAutomation
         {
             JsonComparer jsonComparer = new JsonComparer();
 
-            // get the service response from the facebook API
+            // get the list of employees from the API
             string finalUrl = serviceUrl + "api/employee";
             var apiResponse = commonMethods.HttpGETResponse(finalUrl);
             // replace dynamic properties of this JSON with empty GUID
@@ -61,7 +61,7 @@ namespace APIAutomation
         [TestMethod]
         public void TestGetSpecificEmployee()
         {
-            // get the service response from the facebook API
+            // get the list of employees from the API
             string finalUrl = serviceUrl + "api/employee";
             var apiResponse = commonMethods.HttpGETResponse(finalUrl);
 
