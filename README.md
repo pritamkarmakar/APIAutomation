@@ -30,7 +30,7 @@ There are 2 different approaches of verifying a REST API response -
 ###Components that we have in this test project:
 * APITests.cs - this class contains all the test methods
 * TestData - this folder contains the stubbed API response, we will use this content if we take the 'Using static JSON/XML content' approach
-* Helper > CommonMethods.cs - this class has methods to make GET, POST, DELETE operation to any API. We will reuse these methods across different tests
+* Helper > CommonMethods.cs - this class has methods to make HTTP GET, POST, DELETE operations. We will reuse these methods across different tests
 * Helper > JsonComparer.cs - class to compare two JSON strings. This can remove the dynamic parts of a JSON string to make a comparison. For example - we want to verify whether REST API is returning correct details for a particular employee. This is a static response but inside that response we have some properties that contains dynamic values like a GUID or datetime. So we have to replace those properties with some fixed value so that we can make a final comparison with the stubbed data. This class can do that, for more details please check [here](https://github.com/pritamkarmakar/JSONComparer)
 * DataModels > DataModels.cs - if we are going to verify the API response using the 2nd approach 'Deserialize the JSON to class' then we need to create the class representation of the JSON response. There are many online websites which can help us to get the class representation of a JSON content. My favorite is http://json2csharp.com/. Paste your JSON in the text field of this website and it will give you the class representation. Make sure to give a good name of the class and put that into DataModels.cs file.
 
